@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="clock_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="DRe-uE-OVL">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lzT-TR-koq">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="168"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFj-Lw-SCO">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="168"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dSb-Ti-P2H">
+                                        <rect key="frame" x="0.0" y="228" width="393" height="168"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oA-sM-QlO">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="168"/>
+                                                <connections>
+                                                    <action selector="pick_time:" destination="BYZ-38-t0r" eventType="valueChanged" id="Cfh-2y-R6b"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="865-oo-XcZ">
+                                        <rect key="frame" x="0.0" y="456" width="393" height="168"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP6-Dg-agW">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="168"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer/Start Music"/>
+                                                <connections>
+                                                    <action selector="stopMusicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ylc-8t-bBG"/>
+                                                    <action selector="timer_music:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8G-26-hlS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FHg-bB-vao">
+                                        <rect key="frame" x="0.0" y="684" width="393" height="168"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upB-Iu-Drw">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="168"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dSb-Ti-P2H" secondAttribute="trailing" id="02T-cs-3P0"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="top" secondItem="865-oo-XcZ" secondAttribute="bottom" id="14P-9c-u6Y"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="top" secondItem="865-oo-XcZ" secondAttribute="bottom" id="2We-7H-XxP"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="top" secondItem="lzT-TR-koq" secondAttribute="bottom" id="3tC-6C-7hD"/>
+                                    <constraint firstAttribute="trailing" secondItem="lzT-TR-koq" secondAttribute="trailing" id="7qW-Bn-odB"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="top" secondItem="dSb-Ti-P2H" secondAttribute="bottom" id="ABt-vf-met"/>
+                                    <constraint firstAttribute="trailing" secondItem="dSb-Ti-P2H" secondAttribute="trailing" id="AgE-5w-354"/>
+                                    <constraint firstItem="lzT-TR-koq" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="C3V-IB-JX6"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="CRp-mE-YqY"/>
+                                    <constraint firstItem="lzT-TR-koq" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="D3m-Kc-LiJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="FHg-bB-vao" secondAttribute="bottom" id="LZ1-gm-yzR"/>
+                                    <constraint firstAttribute="bottom" secondItem="FHg-bB-vao" secondAttribute="bottom" id="OkT-gr-jTI"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="RhX-Rk-7CB"/>
+                                    <constraint firstAttribute="trailing" secondItem="FHg-bB-vao" secondAttribute="trailing" id="TRh-kj-qm7"/>
+                                    <constraint firstAttribute="trailing" secondItem="FHg-bB-vao" secondAttribute="trailing" id="VHa-eq-Mf4"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="top" secondItem="dSb-Ti-P2H" secondAttribute="bottom" id="W6u-rg-XwB"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="top" secondItem="lzT-TR-koq" secondAttribute="bottom" id="YAV-5x-a2f"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="top" secondItem="lzT-TR-koq" secondAttribute="bottom" id="YLO-nG-JwR"/>
+                                    <constraint firstAttribute="trailing" secondItem="lzT-TR-koq" secondAttribute="trailing" id="aFi-7i-LtS"/>
+                                    <constraint firstAttribute="trailing" secondItem="865-oo-XcZ" secondAttribute="trailing" id="b1o-4L-MNY"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="top" secondItem="dSb-Ti-P2H" secondAttribute="bottom" id="dT6-Fb-vJI"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="top" secondItem="lzT-TR-koq" secondAttribute="bottom" id="egR-lx-nkc"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="gIM-sc-NZC"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="hFr-JD-d2t"/>
+                                    <constraint firstItem="lzT-TR-koq" firstAttribute="top" secondItem="DRe-uE-OVL" secondAttribute="top" id="ikn-XX-GSa"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="jTj-Y2-mkv"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="top" secondItem="865-oo-XcZ" secondAttribute="bottom" id="mz7-Kf-hhs"/>
+                                    <constraint firstItem="865-oo-XcZ" firstAttribute="top" secondItem="dSb-Ti-P2H" secondAttribute="bottom" id="odU-gC-KQQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="865-oo-XcZ" secondAttribute="trailing" id="qFu-Uu-kol"/>
+                                    <constraint firstItem="dSb-Ti-P2H" firstAttribute="leading" secondItem="DRe-uE-OVL" secondAttribute="leading" id="rf4-Hf-vhc"/>
+                                    <constraint firstItem="FHg-bB-vao" firstAttribute="top" secondItem="865-oo-XcZ" secondAttribute="bottom" id="upR-NR-rZU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DRe-uE-OVL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-59" id="7Sx-c4-zUF"/>
+                            <constraint firstItem="DRe-uE-OVL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wu8-qW-W6e"/>
+                            <constraint firstItem="DRe-uE-OVL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cSg-Hk-aFw"/>
+                            <constraint firstItem="DRe-uE-OVL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kCY-mK-cjg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="liveClock" destination="jFj-Lw-SCO" id="dsi-dg-IlQ"/>
+                        <outlet property="time_picker" destination="8oA-sM-QlO" id="C4G-lh-8s4"/>
+                        <outlet property="time_remaining" destination="upB-Iu-Drw" id="9ae-aL-K7f"/>
+                        <outlet property="timer_click" destination="LP6-Dg-agW" id="zY0-1a-FZo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
