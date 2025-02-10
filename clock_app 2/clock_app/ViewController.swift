@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         // Change background based on AM/PM
         let hour = Calendar.current.component(.hour, from: Date())
         if hour < 12 {
-            view.backgroundColor = UIColor.systemBlue // AM Background
+            view.backgroundColor = UIColor.systemGray6 // AM Background
         } else {
             view.backgroundColor = UIColor.systemOrange // PM Background
         }
